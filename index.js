@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const api = require('./routes/index.js');
-const notes = require('./notes/index.js');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -12,7 +11,9 @@ const app = express();
 // as well as GET *
 
 // then API routes will be written in the /routes/ folder that i created
-// adding routes
+// adding routes ad middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/api', api);
 
 // copied this code to work with from lesson22 solved:
