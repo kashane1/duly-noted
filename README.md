@@ -23,7 +23,11 @@ The following images show the web application's appearance and functionality:
 
 ## Cited:
 http://expressjs.com/ - for Express.js docuemntation
+
 https://devcenter.heroku.com/ - for Heroku documentation
+
 https://insomnia.rest/ - for route testing
+
 https://www.w3schools.com/ - for some hard to find answers
+
 https://stackoverflow.com/ - for some hard to find answers
