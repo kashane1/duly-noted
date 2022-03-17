@@ -14,6 +14,7 @@ notes.post('/', (req, res) => {
 
     const { title, text} = req.body;
 
+    // this builds the request into an object and adds it to the db
     if (req.body) {
         const newNote = {
         title,
@@ -21,6 +22,7 @@ notes.post('/', (req, res) => {
         id: uuid(),
         };
 
+        // readAndAppend is borrowed from fsutils
         readAndAppend(newNote, './db/db.json');
         res.json(`Note added successfully 🚀`);
     } else {
@@ -28,6 +30,7 @@ notes.post('/', (req, res) => {
     }
 });
 
+// adding a DELETE route to delete notes
 notes.delete('/:id', (req, res) => {
     console.info(`${req.method} request received for notes`)
 

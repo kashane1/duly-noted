@@ -1,3 +1,4 @@
+// all the require imports at the top
 const express = require('express');
 const path = require('path');
 const api = require('./routes/index.js');

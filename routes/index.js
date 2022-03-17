@@ -5,6 +5,7 @@ const notes = require('./notes');
 
 const app = express();
 
+// this is the beginning of the html route
 app.use('/notes', notes);
 
 module.exports = app;
