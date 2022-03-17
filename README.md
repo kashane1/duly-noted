@@ -1,5 +1,6 @@
 # Duly Noted
 [Link to application hosted on Heroku](https://pure-scrubland-31598.herokuapp.com/)
+
 I was given some front end code for a note taking app and was tasked with completing the back end.
 
 ---
