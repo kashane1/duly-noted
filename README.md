@@ -1,48 +1,22 @@
 # Duly Noted
 I was given some front end code for a note taking app and was tasked with completing the back end.
 ---
+## Process
+I was able to use the index.js file supplied to me in the public folder in order to work out the routes that were necessary for the program. The first routes were easy, simple get and posts. But as I attempted to write the delete route without actually being taught it in class, I realize I would have to do a bit of internet research. After a couple hours I got it working perfectly and I'm very happy with it. 
 ---
-## Your Task
-
-Your assignment is to modify starter code to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
-
-The application’s front end has already been created. It's your job to build the back end, connect the two, and then deploy the entire application to Heroku.
-
-## User Story
-
-```
-AS A small business owner
-I WANT to be able to write and save notes
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
-```
-
-
-## Acceptance Criteria
-
-```
-GIVEN a note-taking application
-WHEN I open the Note Taker
-THEN I am presented with a landing page with a link to a notes page
-WHEN I click on the link to the notes page
-THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column
-WHEN I enter a new note title and the note’s text
-THEN a Save icon appears in the navigation at the top of the page
-WHEN I click on the Save icon
-THEN the new note I have entered is saved and appears in the left-hand column with the other existing notes
-WHEN I click on an existing note in the list in the left-hand column
-THEN that note appears in the right-hand column
-WHEN I click on the Write icon in the navigation at the top of the page
-THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
-```
-
-
-## Mock-Up
+## Requirements
+1. User is presented with note taking app with intuitive functionality
+2. Clicking the Save icon will add the note the application's database ad it will appear on the left side of the screen
+3. Clicking on one of the notes from the list on the left will load it to the right side of the screen
+4. The functionality of the Trash Can icon works appropriately and will also delete the note from the database
 
 The following images show the web application's appearance and functionality:
 
 ![Existing notes are listed in the left-hand column with empty fields on the right-hand side for the new note’s title and text.](./Assets/11-express-homework-demo-01.png)
 
 ![Note titled “Balance accounts” reads, “Balance account books by end of day Monday,” with other notes listed on the left.](./Assets/11-express-homework-demo-02.png)
+
+
 
 
 ## Getting Started

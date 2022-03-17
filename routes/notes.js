@@ -11,7 +11,6 @@ notes.get('/', (req, res) => {
 // POST route for saving each new note into the db
 notes.post('/', (req, res) => {
     console.info(`${req.method} request received for notes`)
-    console.log(req.body);
 
     const { title, text} = req.body;
 
@@ -30,34 +29,18 @@ notes.post('/', (req, res) => {
 });
 
 notes.delete('/:id', (req, res) => {
-    const idDeleteObj = req.params;
-    const idDelete = idDeleteObj.id;
-    console.log(idDelete);
+    console.info(`${req.method} request received for notes`)
 
-    if (idDelete === -1) return res.error('Error in deleting note');
-
-    console.info(`${req.method} request received for notes`);
+    const noteId = req.params.id;
+    
+    // i struggled here for over an hour, because i thought the readfromfile returned an object, but it doesnt.
     readFromFile('./db/db.json').then((data) => {
-        let inNotesData = JSON.parse(data)
-        console.log(inNotesData);
+        // needed to parse the data first, into an array of objects
+        const allNotes = JSON.parse(data);
+        const newAllNotes = allNotes.filter(note => note.id != noteId);
 
-        let indexDelete = inNotesData.findIndex(inNotesData.id == idDelete);
-        console.log(indexDelete);
-        inNotesData.splice(indexDelete,1),
-
-        // removeNote(id) {
-        //     // Get all notes, remove the note with the given id, write the filtered notes
-        //     return this.getNotes()
-        //       .then(notes => notes.filter(note => note.id !== parseInt(id)))
-        //       .then(filteredNotes => this.write(filteredNotes));
-        //   }
-
-        
-        console.log(inNotesData);
-
-        writeToFile('./db/db.json', inNotesData);
+        writeToFile("./db/db.json", newAllNotes);
     });
-
 
     res.json(`Note deleted successfully 🚀`);
 })
